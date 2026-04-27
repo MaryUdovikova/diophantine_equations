@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задача про монети (число Фробеніуса)</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/themes/coins.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body class="theme-coins">
+  <header class="hero-banner">
+    <div class="topbar">
+      <a href="index.html" class="izzi-btn topbar-home-link">Головна</a>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Задача про монети</h1>
+      <div class="hero-subtitle">Число Фробеніуса</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel highlight">
+      <div class="grid two">
+        <div class="card form-card">
+          <div class="linear-task-heading">
+            <h3 style="margin-top: 0;">Параметри</h3>
+            <fieldset class="linear-difficulty" aria-label="Складність завдання">
+              <label class="linear-difficulty-option">
+                <input type="radio" name="coinsDifficulty" value="easy"> Легка
+              </label>
+              <label class="linear-difficulty-option">
+                <input type="radio" name="coinsDifficulty" value="medium" checked> Середня
+              </label>
+              <label class="linear-difficulty-option">
+                <input type="radio" name="coinsDifficulty" value="hard"> Важка
+              </label>
+            </fieldset>
+          </div>
+          
+          <label>Номінал <math><mi>p</mi></math>
+            <input type="number" id="coinP" min="1" step="1" readonly>
+          </label>
+          <label>Номінал <math><mi>q</mi></math>
+            <input type="number" id="coinQ" min="1" step="1" readonly>
+          </label>
+          <label>Макс. сума для перегляду
+            <input type="number" id="coinLimit" min="10" step="1" readonly>
+          </label>
+          
+          <button class="primary-btn" id="startGame">Почати гру</button>
+        </div>
+        
+        <div class="card result-card">
+          <div id="coinsIntro" class="coins-intro">
+            <h3>Спосіб розв'язання</h3>
+            <p class="coins-intro-text">
+              Натисніть «Почати гру». Оберіть кнопки з недосяжними сумами (вони стануть жовтими), потім натисніть «Перевірити». 
+              Після перевірки правильні суми відображатимуться зеленим, а неправильні - червоним. Спочатку визначте НСД та число Фробеніуса.
+            </p>
+          </div>
+          
+          <div id="coinsScoreBoard" class="score-result-block" style="display: none;">
+            Оцінка: <span id="score">0 / 12</span>
+          </div>
+          
+          <div id="coinsStatus" class="coins-status"></div>
+          <div id="coinsHintLine" class="coins-hint-line" hidden></div>
+          <div id="coinsGrid" class="grid-badges"></div>
+          
+          <div class="check-section coins-actions" id="checkSection" style="display: none;">
+            <div class="linear-task-footer">
+              <button type="button" class="primary-btn" id="checkAnswers">Перевірити</button>
+              <button type="button" class="ghost-btn" id="coinsHintBtn">Підказка</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/coins.js"></script>
+</body>
+</html>

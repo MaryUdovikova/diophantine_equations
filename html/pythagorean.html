@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Піфагорові трійки</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/themes/pythagorean.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body class="theme-pythagorean">
+  <header class="hero-banner">
+    <div class="topbar">
+      <a href="index.html" class="izzi-btn topbar-home-link">Головна</a>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Піфагорові трійки</h1>
+      <div class="hero-subtitle">
+        <math>
+          <msup><mi>a</mi><mn>2</mn></msup>
+          <mo>+</mo>
+          <msup><mi>b</mi><mn>2</mn></msup>
+          <mo>=</mo>
+          <msup><mi>c</mi><mn>2</mn></msup>
+        </math>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="grid two">
+        <div class="card form-card">
+          <div id="defaultContent">
+            <h3 style="margin-top: 0;">Спосіб розвʼязання</h3>
+            <label>Максимальний катет/гіпотенуза
+              <input type="range" id="maxRange" min="5" max="60" value="30">
+              <span id="rangeValue">30</span>
+            </label>
+            <button class="primary-btn" id="generateTriples">Згенерувати трійки</button>
+            
+            <div class="mini-form">
+              <label>Перевірити трійку 
+                <math><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></math>
+                <div class="inline-inputs">
+                  <input type="number" id="checkA" value="3" aria-label="Катет a">
+                  <input type="number" id="checkB" value="4" aria-label="Катет b">
+                </div>
+              </label>
+              <button class="ghost-btn" id="checkTriple">Перевірити</button>
+            </div>
+            
+            <p class="hint">Якщо сума квадратів катетів 
+              <math>
+                <msup><mi>a</mi><mn>2</mn></msup>
+                <mo>+</mo>
+                <msup><mi>b</mi><mn>2</mn></msup>
+              </math> дає ціле число квадрату гіпотенузи, отримаємо гіпотенузу 
+              <math><mi>c</mi></math>.
+            </p>
+          </div>
+          
+          <div id="taskSection" style="display: none;">
+            <div class="linear-task-heading">
+              <h3 style="margin-top: 0;">Завдання</h3>
+              <fieldset class="linear-difficulty" aria-label="Складність завдання">
+                <label class="linear-difficulty-option">
+                  <input type="radio" name="pythagoreanDifficulty" value="easy"> Легка
+                </label>
+                <label class="linear-difficulty-option">
+                  <input type="radio" name="pythagoreanDifficulty" value="medium" checked> Середня
+                </label>
+                <label class="linear-difficulty-option">
+                  <input type="radio" name="pythagoreanDifficulty" value="hard"> Важка
+                </label>
+              </fieldset>
+            </div>
+            
+            <div id="taskType1">
+              <label>Катет <math><mi>a</mi></math>
+                <input type="number" id="taskA" aria-label="Катет a">
+              </label>
+              <label>Катет <math><mi>b</mi></math>
+                <input type="number" id="taskB" aria-label="Катет b">
+              </label>
+              <label>Гіпотенуза <math><mi>c</mi></math>
+                <input type="number" id="taskC" readonly aria-label="Гіпотенуза c">
+              </label>
+            </div>
+            
+            <div class="linear-task-footer" id="pythagoreanTaskFooter">
+              <button type="button" class="primary-btn" id="checkCurrentTask" style="display: none;">Перевірити</button>
+              <button type="button" class="ghost-btn" id="pythagoreanHintBtn" style="display: none;">Підказка</button>
+            </div>
+            
+            <div id="taskResult" style="margin: 12px 0; min-height: 24px;"></div>
+            <div id="taskScore" class="score-result-block" style="display: none; margin-top: 8px;"></div>
+            <button class="primary-btn" id="nextTask" style="display: none; margin-top: 8px;">Наступне завдання</button>
+          </div>
+          
+          <button class="primary-btn" id="startTask" style="margin-top: 16px; width: 100%;">Виконати завдання</button>
+        </div>
+        
+        <div class="card result-card">
+          <div id="defaultResultContent">
+            <h3>Список трійок</h3>
+            <div id="triplesList" class="list"></div>
+          </div>
+          <canvas id="triangleCanvas" width="320" height="220" aria-label="Візуалізація трикутника"></canvas>
+          
+          <div id="taskCanvasWrapper" style="display: none;">
+            <h3 style="margin: 0 0 12px 0;">Трикутник</h3>
+            <canvas id="taskTriangleCanvas" width="320" height="220" aria-label="Візуалізація трикутника завдання"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/pythagorean.js"></script>
+</body>
+</html>

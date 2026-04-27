@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Представлення числа як суми двох квадратів</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/themes/squaresum.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body class="theme-squaresum">
+  <header class="hero-banner">
+    <div class="topbar">
+      <a href="index.html" class="izzi-btn topbar-home-link">Головна</a>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Представлення числа як суми двох квадратів</h1>
+      <div class="hero-subtitle">
+        <math>
+          <msup><mi>x</mi><mn>2</mn></msup>
+          <mo>+</mo>
+          <msup><mi>y</mi><mn>2</mn></msup>
+          <mo>=</mo>
+          <mi>n</mi>
+        </math>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel highlight">
+      <div class="grid two">
+        <div class="card form-card">
+          <div class="linear-task-heading">
+            <h3 style="margin-top: 0;">Завдання</h3>
+            <fieldset class="linear-difficulty" aria-label="Складність завдання">
+              <label class="linear-difficulty-option">
+                <input type="radio" name="squareSumDifficulty" value="easy"> Легка
+              </label>
+              <label class="linear-difficulty-option">
+                <input type="radio" name="squareSumDifficulty" value="medium" checked> Середня
+              </label>
+              <label class="linear-difficulty-option">
+                <input type="radio" name="squareSumDifficulty" value="hard"> Важка
+              </label>
+            </fieldset>
+          </div>
+          
+          <div id="taskDisplay" style="font-size: 1.2em; font-weight: 600; margin: 16px 0; padding: 16px; background: var(--card-bg); border-radius: 8px; text-align: center;">
+            <span id="taskNumber">
+              <math>
+                <mi>n</mi><mo>=</mo>
+              </math> 
+            </span>
+          </div>
+          
+          <div id="inputSection">
+            <p style="margin: 12px 0 8px 0; font-weight: 600;">Введіть пару 
+              <math><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo></math>:
+            </p>
+            <label>
+              <math><mi>x</mi><mo>=</mo></math> (можна від'ємне)
+              <input type="number" id="userX" step="1" aria-label="x">
+            </label>
+            <label>
+              <math><mi>y</mi><mo>=</mo></math> (можна від'ємне)
+              <input type="number" id="userY" step="1" aria-label="y">
+            </label>
+            
+            <button type="button" class="primary-btn" id="nextPairBtn" style="margin-top: 12px; width: 100%;">Наступна пара</button>
+            
+            <div class="linear-task-footer square-sum-actions" style="margin-top: 12px;">
+              <button type="button" class="primary-btn" id="finishBtn">Перевірити</button>
+              <button type="button" class="ghost-btn" id="squareSumHintBtn">Підказка</button>
+            </div>
+          </div>
+          
+          <div id="resultSection" style="display: none;">
+            <div id="resultContent" class="solution"></div>
+            <button class="ghost-btn" id="newTaskBtn" style="margin-top: 12px; width: 100%;">Нове завдання</button>
+          </div>
+        </div>
+        
+        <div class="card result-card">
+          <div id="squareSumIntro" class="coins-intro">
+            <h3>Спосіб розв'язання</h3>
+            <p class="coins-intro-text">
+              Знайдіть усі цілі пари 
+              <math><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo></math>, 
+              для яких 
+              <math>
+                <msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mi>n</mi>
+              </math>. 
+              Враховуйте від’ємні координати. Вводьте пару в поля ліворуч і натискайте «Наступна пара». Коли закінчите, натисніть «Перевірити» і тоді з’явиться оцінка та візуалізація на координатній площині. Кнопка «Підказка» показує всі правильні пари й візуалізацію, після неї натисніть «Повторити» для нового завдання.
+            </p>
+          </div>
+          
+          <div id="squareSumVizWrapper" style="display: none;">
+            <h3 style="margin-top: 0;">Візуалізація</h3>
+            <canvas id="coordinateCanvas" width="400" height="400" style="width: 100%; max-width: 400px; height: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--bg);"></canvas>
+            <div id="pairsList" style="margin-top: 16px; max-height: 200px; overflow-y: auto;">
+              <p style="font-weight: 600; margin-bottom: 8px;">Введені пари:</p>
+              <div id="pairsDisplay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/squareSum.js"></script>
+</body>
+</html>

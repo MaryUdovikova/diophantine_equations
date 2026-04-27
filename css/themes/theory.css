@@ -1,0 +1,9 @@
+body.theme-theory {
+  --btn-gradient: linear-gradient(to right, #cf96ca 0%, #de20d8 53%, #ba255e 100%);
+  --btn-bg-fallback: #ba255e;
+  --btn-shadow-rgb: 186, 37, 94;
+}
+
+body.theme-theory .hero-banner:not(.hero-banner-main) {
+  --hero-banner-bg: url("../../images/banners/theory.jpg") center / cover no-repeat;
+}

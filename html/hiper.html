@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гіпербола</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/themes/hiper.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body class="theme-hiper">
+  <header class="hero-banner">
+    <div class="topbar">
+      <a href="index.html" class="izzi-btn topbar-home-link">Головна</a>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Рівняння виду 
+        <math>
+          <mi>x</mi><mi>y</mi><mo>=</mo><mi>k</mi>
+        </math>
+      </h1>
+      <div class="hero-subtitle">Гіпербола</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel highlight">
+      <div class="grid two">
+        <div class="card form-card">
+          <div class="linear-task-heading">
+            <h3 style="margin-top: 0;">Завдання</h3>
+            <fieldset class="linear-difficulty" aria-label="Складність завдання">
+              <label class="linear-difficulty-option">
+                <input type="radio" name="hiperDifficulty" value="easy"> Легка
+              </label>
+              <label class="linear-difficulty-option">
+                <input type="radio" name="hiperDifficulty" value="medium" checked> Середня
+              </label>
+              <label class="linear-difficulty-option">
+                <input type="radio" name="hiperDifficulty" value="hard"> Важка
+              </label>
+            </fieldset>
+          </div>
+          
+          <div id="hiperTaskDisplay" style="font-size: 1.2em; font-weight: 600; margin: 16px 0; padding: 16px; background: var(--card-bg); border-radius: 8px; text-align: center;">
+            <span id="hiperTaskNumber">
+              <math>
+                <mi>k</mi><mo>=</mo>
+              </math> 
+            </span>
+          </div>
+          
+          <div id="hiperInputSection">
+            <p style="margin: 12px 0 8px 0; font-weight: 600;">Введіть пару 
+              <math><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo></math>:
+            </p>
+            <label>
+              <math><mi>x</mi><mo>=</mo></math> (можна від'ємне)
+              <input type="number" id="hiperUserX" step="1" aria-label="x">
+            </label>
+            <label>
+              <math><mi>y</mi><mo>=</mo></math> (можна від'ємне)
+              <input type="number" id="hiperUserY" step="1" aria-label="y">
+            </label>
+            
+            <button type="button" class="primary-btn" id="hiperNextPairBtn" style="margin-top: 12px; width: 100%;">Наступна пара</button>
+            <div class="linear-task-footer square-sum-actions" style="margin-top: 12px;">
+              <button type="button" class="primary-btn" id="hiperCheckBtn">Перевірити</button>
+              <button type="button" class="ghost-btn" id="hiperHintBtn">Підказка</button>
+            </div>
+          </div>
+          
+          <div id="hiperResultSection" style="display: none;">
+            <div id="hiperResultContent" class="solution"></div>
+            <button type="button" class="ghost-btn" id="hiperNewTaskBtn" style="margin-top: 12px; width: 100%;">Нове завдання</button>
+          </div>
+        </div>
+        
+        <div class="card result-card">
+          <div id="hiperIntro" class="coins-intro">
+            <h3>Спосіб розв'язання</h3>
+            <p class="coins-intro-text">
+              Знайдіть усі цілі пари 
+              <math><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo></math>, 
+              для яких 
+              <math><mi>x</mi><mi>y</mi><mo>=</mo><mi>k</mi></math>. 
+              Враховуйте від’ємні координати. Вводьте пару в поля ліворуч і натискайте «Наступна пара». Коли закінчите, натисніть «Перевірити» і тоді з’явиться оцінка та візуалізація. Кнопка «Підказка» показує всі правильні пари й візуалізацію; після неї натисніть «Повторити» для нового завдання.
+            </p>
+          </div>
+          <div id="hiperVizWrapper" style="display: none;">
+            <h3 style="margin-top: 0;">Візуалізація</h3>
+            <canvas id="hiperCanvas" width="400" height="400" style="width: 100%; max-width: 400px; height: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--bg);"></canvas>
+            <div id="hiperPairsList" style="margin-top: 16px; max-height: 200px; overflow-y: auto;">
+              <p style="font-weight: 600; margin-bottom: 8px;">Введені пари:</p>
+              <div id="hiperPairsDisplay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/hiper.js"></script>
+</body>
+</html>

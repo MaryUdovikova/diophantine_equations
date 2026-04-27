@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лінійне діофантове рівняння</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/themes/linear.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body class="theme-linear">
+  <header class="hero-banner">
+    <div class="topbar">
+      <a href="index.html" class="izzi-btn topbar-home-link">Головна</a>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Лінійне діофантове рівняння</h1>
+      <div class="hero-subtitle">
+        <math>
+          <mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi><mo>=</mo><mi>c</mi>
+        </math>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel highlight">
+      <div class="grid two">
+        <div class="card form-card">
+          <div class="linear-task-heading">
+            <h3 style="margin-top: 0;">Завдання</h3>
+            <fieldset class="linear-difficulty" aria-label="Складність завдання">
+              <label class="linear-difficulty-option">
+                <input type="radio" name="linearDifficulty" value="easy"> Легка
+              </label>
+              <label class="linear-difficulty-option">
+                <input type="radio" name="linearDifficulty" value="medium" checked> Середня
+              </label>
+              <label class="linear-difficulty-option">
+                <input type="radio" name="linearDifficulty" value="hard"> Важка
+              </label>
+            </fieldset>
+          </div>
+          
+          <div id="equationDisplay" style="font-size: 1.2em; font-weight: 600; margin: 16px 0; padding: 16px; background: var(--card-bg); border-radius: 8px; text-align: center;">
+            <span id="equationText"></span>
+          </div>
+          
+          <div id="taskSection">
+            <label>
+              <math>
+                <mi>НСД</mi>
+                <mrow><mtext>(</mtext><mi>a</mi><mo>,</mo><mi>b</mi><mtext>)</mtext></mrow>
+                <mo>=</mo>
+              </math>
+              <input type="number" id="userGcd" step="1" aria-label="НСД">
+            </label>
+            
+            <label id="conditionLabel">
+              Умова існування 
+              <span id="dynamicConditionText">
+                <math>
+                  <mo>(</mo><mi>c</mi><mo>%</mo><mi>НСД</mi><mo>=</mo><mo>?</mo><mo>)</mo>
+                </math>
+              </span>
+              <input type="number" id="userCondition" step="1" aria-label="Умова існування">
+            </label>
+            
+            <label>Приватний розв'язок 
+              <math>
+                <msub><mi>x</mi><mn>0</mn></msub><mo>=</mo>
+              </math>
+              <input type="number" id="userX0" step="1" aria-label="x₀">
+            </label>
+            
+            <label>Приватний розв'язок 
+              <math>
+                <msub><mi>y</mi><mn>0</mn></msub><mo>=</mo>
+              </math>
+              <input type="number" id="userY0" step="1" aria-label="y₀">
+            </label>
+            
+            <div class="linear-task-footer">
+              <button type="button" class="primary-btn" id="checkBtn">Перевірити</button>
+              <button type="button" class="ghost-btn" id="hintBtn">Підказка</button>
+            </div>
+          </div>
+          
+          <div id="resultSection" style="display: none;">
+            <div id="resultContent" class="solution"></div>
+            <button class="ghost-btn" id="newTaskBtn" style="margin-top: 12px; width: 100%;">Нове завдання</button>
+          </div>
+        </div>
+        
+        <div class="card result-card" id="solutionCard">
+          <h3>Спосіб розвʼязання</h3>
+          <div id="hintsContent" class="solution">
+            <p>1. Обчисліть НСД коефіцієнтів <math><mi>a</mi></math> та <math><mi>b</mi></math>.</p>
+            <p>2. Перевірте умову існування: чи ділиться <math><mi>c</mi></math> на НСД націло?</p>
+            <p>3. Знайдіть приватний розв'язок 
+              <math>
+                <mo>(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>)</mo>
+              </math> 
+              за допомогою розширеного алгоритму Евкліда.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/linear.js"></script>
+</body>
+</html>

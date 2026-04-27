@@ -1,0 +1,13 @@
+body.theme-hiper {
+  --btn-gradient: linear-gradient(to right, #d2cf00 0%, #a39302 56%, #777500 100%);
+  --btn-bg-fallback: #777500;
+  --btn-shadow-rgb: 119, 117, 0;
+  --score-block-bg: linear-gradient(135deg, rgba(210, 207, 0, 0.26), rgba(119, 117, 0, 0.14));
+  --score-block-border: rgba(163, 147, 2, 0.32);
+  --score-block-text: #854d0e;
+  --viz-axis-color: #a39302;
+}
+
+body.theme-hiper .hero-banner:not(.hero-banner-main) {
+  --hero-banner-bg: url("../../images/banners/hiper.jpg") center / cover no-repeat;
+}

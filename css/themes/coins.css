@@ -1,0 +1,12 @@
+body.theme-coins {
+  --btn-gradient: linear-gradient(to right, #00cdff 0%, #0262a3 56%, #003077 100%);
+  --btn-bg-fallback: #003077;
+  --btn-shadow-rgb: 0, 48, 119;
+  --score-block-bg: linear-gradient(135deg, rgba(0, 205, 255, 0.2), rgba(0, 48, 119, 0.12));
+  --score-block-border: rgba(2, 98, 163, 0.26);
+  --score-block-text: #0369a1;
+}
+
+body.theme-coins .hero-banner:not(.hero-banner-main) {
+  --hero-banner-bg: url("../../images/banners/coins.jpg") center / cover no-repeat;
+}

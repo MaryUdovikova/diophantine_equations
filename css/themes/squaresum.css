@@ -1,0 +1,13 @@
+body.theme-squaresum {
+  --btn-gradient: linear-gradient(to right, #00ffae 0%, #007259 56%, #00594d 100%);
+  --btn-bg-fallback: #00594d;
+  --btn-shadow-rgb: 0, 89, 77;
+  --score-block-bg: linear-gradient(135deg, rgba(0, 255, 174, 0.2), rgba(0, 89, 77, 0.12));
+  --score-block-border: rgba(0, 114, 89, 0.24);
+  --score-block-text: #0f766e;
+  --viz-axis-color: #00a887;
+}
+
+body.theme-squaresum .hero-banner:not(.hero-banner-main) {
+  --hero-banner-bg: url("../../images/banners/squareSum.jpg") center / cover no-repeat;
+}

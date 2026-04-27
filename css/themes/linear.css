@@ -1,0 +1,12 @@
+body.theme-linear {
+  --btn-gradient: linear-gradient(to right, #00c133 0%, #117e00 56%, #005506 100%);
+  --btn-bg-fallback: #005506;
+  --btn-shadow-rgb: 0, 85, 6;
+  --score-block-bg: linear-gradient(135deg, rgba(0, 193, 51, 0.22), rgba(0, 85, 6, 0.12));
+  --score-block-border: rgba(17, 126, 0, 0.25);
+  --score-block-text: #166534;
+}
+
+body.theme-linear .hero-banner:not(.hero-banner-main) {
+  --hero-banner-bg: url("../../images/banners/linear.jpg") center / cover no-repeat;
+}

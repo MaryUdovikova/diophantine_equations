@@ -1,0 +1,21 @@
+body.theme-pythagorean {
+  --btn-gradient: linear-gradient(to right, #ff7b00 0%, #a33f02 56%, #774400 100%);
+  --btn-bg-fallback: #774400;
+  --btn-shadow-rgb: 119, 68, 0;
+  --score-block-bg: linear-gradient(135deg, rgba(255, 123, 0, 0.22), rgba(119, 68, 0, 0.12));
+  --score-block-border: rgba(163, 63, 2, 0.28);
+  --score-block-text: #9a3412;
+  --pyth-canvas-bg: #512417;
+  --pyth-canvas-stroke: #ff8c42;
+  --pyth-canvas-fill: rgba(255, 123, 0, 0.22);
+  --pyth-canvas-label: #f9fafb;
+  --pyth-range-accent: #a33f02;
+}
+
+body.theme-pythagorean input[type="range"] {
+  accent-color: var(--pyth-range-accent);
+}
+
+body.theme-pythagorean .hero-banner:not(.hero-banner-main) {
+  --hero-banner-bg: url("../../images/banners/pythagorean.jpg") center / cover no-repeat;
+}
