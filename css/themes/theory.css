@@ -5,5 +5,5 @@ body.theme-theory {
 }
 
 body.theme-theory .hero-banner:not(.hero-banner-main) {
-  --hero-banner-bg: url("../../images/banners/theory.jpg") center / cover no-repeat;
+  --hero-banner-bg: url("/diophantine_equations/images/banners/theory.jpg") center / cover no-repeat;
 }

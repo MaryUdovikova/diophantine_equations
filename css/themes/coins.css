@@ -8,5 +8,5 @@ body.theme-coins {
 }
 
 body.theme-coins .hero-banner:not(.hero-banner-main) {
-  --hero-banner-bg: url("../../images/banners/coins.jpg") center / cover no-repeat;
+  --hero-banner-bg: url("/diophantine_equations/images/banners/coins.jpg") center / cover no-repeat;
 }

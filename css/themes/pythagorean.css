@@ -17,5 +17,5 @@ body.theme-pythagorean input[type="range"] {
 }
 
 body.theme-pythagorean .hero-banner:not(.hero-banner-main) {
-  --hero-banner-bg: url("../../images/banners/pythagorean.jpg") center / cover no-repeat;
+  --hero-banner-bg: url("/diophantine_equations/images/banners/pythagorean.jpg") center / cover no-repeat;
 }

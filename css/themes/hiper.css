@@ -9,5 +9,5 @@ body.theme-hiper {
 }
 
 body.theme-hiper .hero-banner:not(.hero-banner-main) {
-  --hero-banner-bg: url("../../images/banners/hiper.jpg") center / cover no-repeat;
+  --hero-banner-bg: url("/diophantine_equations/images/banners/hiper.jpg") center / cover no-repeat;
 }

@@ -9,5 +9,5 @@ body.theme-squaresum {
 }
 
 body.theme-squaresum .hero-banner:not(.hero-banner-main) {
-  --hero-banner-bg: url("../../images/banners/squareSum.jpg") center / cover no-repeat;
+  --hero-banner-bg: url("/diophantine_equations/images/banners/squareSum.jpg") center / cover no-repeat;
 }

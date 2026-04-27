@@ -8,5 +8,5 @@ body.theme-linear {
 }
 
 body.theme-linear .hero-banner:not(.hero-banner-main) {
-  --hero-banner-bg: url("../../images/banners/linear.jpg") center / cover no-repeat;
+  --hero-banner-bg: url("/diophantine_equations/images/banners/linear.jpg") center / cover no-repeat;
 }
